@@ -1,36 +1,47 @@
-# 🧞 지니 (Genie)
+# 🧞 지니 (Genie) - 태은's Workspace
 
-> **higplus 전용 AI 어시스턴트 프로젝트 허브**
+> **태은 전용 AI 어시스턴트 프로젝트 허브** | HiPlus Team
 
 ---
 
 ## 📌 소개
 
-이 레포지토리는 **higplus** 님의 개인 프로젝트 허브입니다.
-AI 어시스턴트(**지니**)가 관리하며, 모든 프로젝트와 자동화가 이곳에 저장됩니다.
+이 레포지토리는 **태은** 님의 개인 워크스페이스입니다.
+AI 어시스턴트(**지니**)가 관리하며, 태은 님의 프로젝트와 자동화가 이곳에 저장됩니다.
+
+> ⚠️ 이 레포는 **태은** 전용입니다. 회사 공용 GitHub(`highplus23-source`)에서 운영됩니다.
+
+## 👤 담당자
+
+| 항목 | 내용 |
+|------|------|
+| **이름** | 태은 |
+| **AI 어시스턴트** | 지니 (Genie) 🧞 |
+| **소속** | HiPlus |
+| **GitHub** | highplus23-source (회사 공용) |
 
 ## 📂 폴더 구조 & 저장 위치
 
 ```
-genie/
+genie/                          ← 태은's 워크스페이스
 │
-├── 📁 projects/              ← 새 프로젝트가 저장되는 곳
-│   ├── saju-diet-web/        (예시) 사주 다이어트 웹사이트
-│   └── hiplus-dashboard/     (예시) HiPlus 대시보드
+├── 📁 projects/                ← 새 프로젝트가 저장되는 곳
+│   ├── saju-diet-web/          (예시) 사주 다이어트 웹사이트
+│   └── hiplus-dashboard/       (예시) HiPlus 대시보드
 │
-├── 📁 workflows/             ← 자동화 & 워크플로우 저장
-│   └── genie-settings.md     지니 기본 설정
+├── 📁 workflows/               ← 자동화 & 워크플로우 저장
+│   └── genie-settings.md       지니 기본 설정
 │
-├── 📁 configs/               ← 설정 파일 저장
+├── 📁 configs/                 ← 설정 파일 저장
 │   └── (환경설정, API키 관리 등)
 │
-├── 📁 docs/                  ← 문서 & 가이드 저장
+├── 📁 docs/                    ← 문서 & 가이드 저장
 │   └── (프로젝트 문서, 메모 등)
 │
-├── 📁 .agent/workflows/      ← AI 어시스턴트 전용 워크플로우
-│   └── genie.md              지니 워크플로우 설정
+├── 📁 .agent/workflows/        ← AI 어시스턴트 전용 워크플로우
+│   └── genie.md                지니 워크플로우 설정
 │
-├── CLAUDE.md                 ← Claude AI 설정
+├── CLAUDE.md                   ← Claude AI 설정
 ├── .gitignore
 └── README.md
 ```
@@ -60,4 +71,4 @@ cd genie
 
 ---
 
-Made with 🧞 by Genie & higplus
+Made with 🧞 by Genie & 태은 | HiPlus Team
