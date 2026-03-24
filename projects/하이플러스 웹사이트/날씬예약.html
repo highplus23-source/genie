@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씬예약 | 한의사가 직접 운영하는 다이어트 한약 브랜드</title>
+    <meta name="description" content="한의사가 직접 운영하는 다이어트 한약 브랜드 날씬예약. 실전 검증된 마케팅 전략, 의료광고법 완벽 준수.">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── 상단 브랜드 히어로 카드 ── */
+        .brand-hero-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 50%, #f5f0ff 100%);
+            border: 1.5px solid #c8e6ff;
+            border-radius: 24px;
+            padding: 56px 64px;
+            max-width: 960px;
+            margin: 0 auto;
+            box-shadow: 0 8px 40px rgba(80,140,255,0.10);
+        }
+        .brand-hero-card h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin: 12px 0 8px;
+        }
+        .brand-hero-card .sub {
+            font-size: 1.05rem;
+            color: #5a6a8a;
+            margin-bottom: 28px;
+        }
+        .brand-hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .brand-hero-features span {
+            background: #fff;
+            border: 1.5px solid #c8e6ff;
+            border-radius: 999px;
+            padding: 8px 20px;
+            font-size: 0.92rem;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .brand-hero-desc {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.9;
+            max-width: 640px;
+            margin: 0 auto 32px;
+        }
+        .brand-hero-quote {
+            background: linear-gradient(90deg, #4f8cff, #a259ff);
+            color: #fff;
+            border-radius: 16px;
+            padding: 20px 40px;
+            font-size: 0.97rem;
+            font-weight: 600;
+        }
+
+        /* ── 공통 섹션 ── */
+        .media-section { padding: 80px 0; }
+        .media-section-header { text-align: center; margin-bottom: 48px; }
+        .media-section-header .badge {
+            display: inline-block;
+            border-radius: 999px;
+            padding: 6px 18px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .media-section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 0 10px;
+        }
+        .media-section-header p { color: #5a6a8a; font-size: 0.95rem; }
+
+        /* ── 유튜브 섹션 ── */
+        #youtube-section { background: #111; }
+        #youtube-section .media-section-header .badge { background: rgba(255,60,60,0.15); color: #ff4444; }
+        #youtube-section .media-section-header h2 { color: #fff; }
+        #youtube-section .media-section-header p { color: #999; }
+
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        /* ▼ 유튜브 영상을 넣을 칸 — iframe src="" 또는 <img src=""> 로 교체 */
+        .yt-slot {
+            aspect-ratio: 16/9;
+            background: #1e1e1e;
+            border-radius: 14px;
+            border: 2px dashed #333;
+            overflow: hidden;
+        }
+        /* 예: <iframe src="https://www.youtube.com/embed/영상ID" ...> 또는 <img src="썸네일.jpg"> */
+
+        .yt-channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff0000;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            margin-top: 36px;
+        }
+
+        /* ── 인스타그램 섹션 ── */
+        #insta-section { background: #fdf8ff; }
+        #insta-section .media-section-header .badge { background: #f3e8ff; color: #c026d3; }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+        /* ▼ 인스타 게시물을 넣을 칸 — <img src="이미지.jpg"> 로 교체 */
+        .insta-slot {
+            aspect-ratio: 1/1;
+            background: #f0e8ff;
+            border-radius: 12px;
+            border: 2px dashed #d8aaee;
+            overflow: hidden;
+        }
+        /* 예: <img src="캡쳐이미지.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"> */
+
+        .insta-profile-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            margin-top: 36px;
+        }
+
+        /* ── 포스터 섹션 ── */
+        #poster-section { background: #f9f8ff; }
+        #poster-section .media-section-header .badge { background: #ede9fe; color: #7c3aed; }
+
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        /* ▼ 포스터 이미지를 넣을 칸 — <img src="포스터.jpg"> 로 교체 */
+        .poster-slot {
+            aspect-ratio: 3/4;
+            background: #ede9fe;
+            border-radius: 16px;
+            border: 2px dashed #c4b5fd;
+            overflow: hidden;
+        }
+        /* 예: <img src="포스터이미지.jpg" style="width:100%;height:100%;object-fit:cover;"> */
+
+        /* ── 사주식단 섹션 ── */
+        #saju-section { background: linear-gradient(135deg, #0d0d20, #1a1a35); }
+        #saju-section .media-section-header .badge { background: rgba(163,100,255,0.15); color: #c090ff; }
+        #saju-section .media-section-header h2 { color: #fff; }
+        #saju-section .media-section-header p { color: #8899bb; }
+
+        .saju-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .saju-info {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .saju-info h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin: 0 0 16px; }
+        .saju-info p { color: #8899bb; line-height: 1.85; margin-bottom: 24px; }
+        .saju-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .saju-tag {
+            background: rgba(163,100,255,0.18);
+            border: 1px solid rgba(163,100,255,0.35);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 0.82rem;
+            color: #c090ff;
+            font-weight: 600;
+        }
+
+        .saju-ad-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        /* ▼ 사주식단 바이럴 광고를 넣을 칸 — <img src="광고.jpg"> 또는 <video> 로 교체 */
+        .saju-slot {
+            aspect-ratio: 9/16;
+            background: rgba(163,100,255,0.08);
+            border-radius: 16px;
+            border: 2px dashed rgba(163,100,255,0.35);
+            overflow: hidden;
+        }
+        /* 예: <img src="광고캡쳐.jpg" style="width:100%;height:100%;object-fit:cover;"> */
+
+        /* ── 공통 버튼 영역 ── */
+        .btn-area { text-align: center; }
+
+        @media (max-width: 900px) {
+            .youtube-grid { grid-template-columns: repeat(2, 1fr); }
+            .insta-grid { grid-template-columns: repeat(3, 1fr); }
+            .poster-grid { grid-template-columns: repeat(2, 1fr); }
+            .saju-layout { grid-template-columns: 1fr; }
+            .brand-hero-card { padding: 40px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Hi<span class="logo-accent">+</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#brand-intro">브랜드 소개</a>
+                <a href="#slimbook">상세 안내</a>
+                <a href="#youtube-section">유튜브</a>
+                <a href="#insta-section">인스타그램</a>
+                <a href="#poster-section">포스터</a>
+                <a href="#saju-section">사주식단</a>
+                <a href="#slimbook-products">한약 라인업</a>
+                <a href="날씬예약-전략.html" style="color:#a259ff; font-weight:700;">📋 비즈니스 전략</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================================== -->
+    <!-- 상단 브랜드 히어로 카드 -->
+    <!-- ======================================== -->
+    <section class="section section-white" id="brand-intro" style="padding-top: 120px;">
+        <div class="container">
+            <div class="brand-hero-card animate-on-scroll">
+                <span class="section-badge">OWN BRAND</span>
+                <h2>날씬예약</h2>
+                <p class="sub">한의사가 직접 운영하는 다이어트 한약 브랜드</p>
+
+                <div class="brand-hero-features">
+                    <span>💊 한의사 직접 처방·운영</span>
+                    <span>🧪 실전 검증된 마케팅</span>
+                    <span>⚖️ 의료광고법 완벽 준수</span>
+                    <span>🌿 다이어트 한약 전문</span>
+                </div>
+
+                <p class="brand-hero-desc">
+                    날씬예약은 하이플러스가 직접 만들고, <strong>한의사가 직접 운영</strong>하는 다이어트 한약 브랜드입니다.<br>
+                    단순히 마케팅 대행만 하는 것이 아니라, <strong>자체 브랜드를 직접 런칭</strong>하고 성장시킨 경험이 있습니다.<br>
+                    모든 마케팅 전략은 날씬예약에서 먼저 테스트하여 효과가 확인된 방법만 고객 병원에 적용합니다.
+                </p>
+
+                <div class="brand-hero-quote">
+                    "저희가 직접 사용해보고 효과가 있는 방식을 사용하기 때문에, 안전하고 효과적입니다."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- 날씬예약 BRAND SHOWCASE -->
+    <!-- ======================================== -->
+    <section class="section section-sky" id="slimbook">
+        <div class="container">
+            <div class="brand-showcase animate-on-scroll">
+                <div class="brand-showcase-img">
+                    <img src="assets/날씬예약.jpg" alt="날씬예약 - 한의사가 직접 운영하는 다이어트 한약 브랜드" loading="lazy">
+                </div>
+                <div class="brand-showcase-text">
+                    <span class="section-badge">BRAND DETAIL</span>
+                    <h2 class="brand-showcase-title">날씬예약</h2>
+                    <p class="brand-showcase-sub">한의사가 직접 운영하는 다이어트 한약 브랜드</p>
+                    <div class="brand-points">
+                        <div class="brand-point">
+                            <div class="brand-point-icon">💊</div>
+                            <div>
+                                <strong>한의사 직접 처방·운영</strong>
+                                <p>의료인이 직접 제품을 처방하고 브랜드 전체를 운영합니다. 의료광고법을 철저히 준수하면서도 효과적인 마케팅 전략을 실행합니다.</p>
+                            </div>
+                        </div>
+                        <div class="brand-point">
+                            <div class="brand-point-icon">🧪</div>
+                            <div>
+                                <strong>마케팅 전략의 실전 검증</strong>
+                                <p>모든 마케팅 전략을 날씬예약에서 먼저 테스트합니다. 블로그, 인스타그램, 유튜브 등 다양한 채널에서 효과가 확인된 방법만을 고객 병원에 적용합니다.</p>
+                            </div>
+                        </div>
+                        <div class="brand-point">
+                            <div class="brand-point-icon">📈</div>
+                            <div>
+                                <strong>다이어트 분야 마케팅 노하우</strong>
+                                <p>의료광고법이 가장 치열한 다이어트 분야에서 직접 브랜드를 운영하며 축적한 노하우를, 원장님 병원 마케팅에 그대로 적용합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- 유튜브 섹션 -->
+    <!-- 영상 추가방법: .yt-slot 안에 아래 중 하나를 복붙
+         [iframe] <iframe src="https://www.youtube.com/embed/영상ID" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+         [이미지] <img src="썸네일이미지.jpg" style="width:100%;height:100%;object-fit:cover;">
+    -->
+    <!-- ======================================== -->
+    <section class="media-section" id="youtube-section">
+        <div class="container">
+            <div class="media-section-header">
+                <div class="badge">▶ 유튜브 채널</div>
+                <h2>날씬예약 유튜브</h2>
+                <p>한의사가 직접 출연하는 다이어트 한약 전문 채널</p>
+            </div>
+
+            <div class="youtube-grid">
+                <div class="yt-slot"></div>
+                <div class="yt-slot"></div>
+                <div class="yt-slot"></div>
+                <div class="yt-slot"></div>
+            </div>
+
+            <div class="btn-area">
+                <!-- href에 유튜브 채널 주소를 넣어주세요 -->
+                <a href="" class="yt-channel-btn" id="yt-channel-link">▶ 유튜브 채널 바로가기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- 인스타그램 섹션 -->
+    <!-- 이미지 추가방법: .insta-slot 안에
+         <img src="게시물이미지.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:10px;">
+    -->
+    <!-- ======================================== -->
+    <section class="media-section" id="insta-section">
+        <div class="container">
+            <div class="media-section-header">
+                <div class="badge">📸 인스타그램</div>
+                <h2>날씬예약 인스타그램</h2>
+                <p>최신 소식 · 후기 · 브랜드 스토리</p>
+            </div>
+
+            <div class="insta-grid">
+                <div class="insta-slot"></div>
+                <div class="insta-slot"></div>
+                <div class="insta-slot"></div>
+                <div class="insta-slot"></div>
+                <div class="insta-slot"></div>
+                <div class="insta-slot"></div>
+            </div>
+
+            <div class="btn-area">
+                <!-- href에 인스타그램 프로필 주소를 넣어주세요 -->
+                <a href="" class="insta-profile-btn" id="insta-profile-link">📸 인스타그램 바로가기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- 최근 포스터 섹션 -->
+    <!-- 이미지 추가방법: .poster-slot 안에
+         <img src="포스터이미지.jpg" style="width:100%;height:100%;object-fit:cover;">
+    -->
+    <!-- ======================================== -->
+    <section class="media-section" id="poster-section">
+        <div class="container">
+            <div class="media-section-header">
+                <div class="badge">🖼️ 최근 포스터</div>
+                <h2>최근 생성된 포스터</h2>
+                <p>날씬예약 마케팅에 사용된 최신 광고 포스터</p>
+            </div>
+
+            <div class="poster-grid">
+                <div class="poster-slot"></div>
+                <div class="poster-slot"></div>
+                <div class="poster-slot"></div>
+                <div class="poster-slot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- 사주식단 (바이럴광고) 섹션 -->
+    <!-- 광고 추가방법: .saju-slot 안에
+         <img src="광고캡쳐.jpg" style="width:100%;height:100%;object-fit:cover;">
+         또는 <video src="광고영상.mp4" autoplay loop muted style="width:100%;height:100%;object-fit:cover;"></video>
+    -->
+    <!-- ======================================== -->
+    <section class="media-section" id="saju-section">
+        <div class="container">
+            <div class="media-section-header">
+                <div class="badge">🔮 바이럴 광고</div>
+                <h2>사주식단</h2>
+                <p>사주 기반 맞춤 다이어트 식단 · 바이럴 콘텐츠</p>
+            </div>
+
+            <div class="saju-layout">
+                <div class="saju-info">
+                    <h3>🔮 사주식단이란?</h3>
+                    <p>
+                        개인의 사주(四柱)를 분석하여 체질에 맞는 맞춤형 다이어트 식단을 제안하는 바이럴 콘텐츠입니다.<br><br>
+                        의료광고법의 제한 안에서 흥미로운 스토리텔링으로 자연스럽게 날씬예약 브랜드를 노출하고,
+                        SNS·유튜브·블로그를 통한 유기적 확산을 목표로 합니다.
+                    </p>
+                    <div class="saju-tags">
+                        <span class="saju-tag">🔮 사주 체질 분석</span>
+                        <span class="saju-tag">🥗 맞춤 식단 제안</span>
+                        <span class="saju-tag">📱 SNS 바이럴</span>
+                        <span class="saju-tag">🧬 한방 다이어트</span>
+                        <span class="saju-tag">⚖️ 의료광고법 준수</span>
+                    </div>
+                </div>
+
+                <div class="saju-ad-grid">
+                    <div class="saju-slot"></div>
+                    <div class="saju-slot"></div>
+                    <div class="saju-slot"></div>
+                    <div class="saju-slot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- 날씬예약 PRODUCT LINE -->
+    <!-- ======================================== -->
+    <section class="section section-white" id="slimbook-products">
+        <div class="container">
+            <div class="product-line-header animate-on-scroll">
+                <div class="product-line-top">
+                    <span class="section-badge">PRODUCT LINE</span>
+                    <h2 class="product-line-title">
+                        <span class="product-line-brand">날씬예약</span>
+                        한약 라인업
+                    </h2>
+                </div>
+                <p class="product-line-desc">한의사가 직접 처방하고 운영하는 다이어트 한약 브랜드. 체질과 목표에 따라 최적화된 한약을 제공합니다.</p>
+            </div>
+
+            <div class="product-grid animate-on-scroll">
+                <div class="product-card" data-delay="0">
+                    <div class="product-img-wrap">
+                        <img src="assets/탕약.jpg" alt="날씬예약 탕약" class="product-img" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">탕약</span>
+                        <h3 class="product-name">날씬예약 탕약</h3>
+                        <p class="product-desc">한의사가 체질을 분석하고 1:1로 처방하는 맞춤 탕약. 흡수율이 높아 빠른 효과를 기대할 수 있습니다.</p>
+                        <ul class="product-features">
+                            <li>체질별 1:1 맞춤 처방</li>
+                            <li>식욕 억제 · 대사 활성화</li>
+                            <li>부종 완화 · 체지방 감소</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card" data-delay="100">
+                    <div class="product-img-wrap">
+                        <img src="assets/알약.jpg" alt="날씬예약 알약" class="product-img" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">알약</span>
+                        <h3 class="product-name">날씬예약 알약</h3>
+                        <p class="product-desc">복용이 간편한 환 형태의 다이어트 한약. 바쁜 일상 속에서도 꾸준히 관리할 수 있습니다.</p>
+                        <ul class="product-features">
+                            <li>간편한 복용 · 휴대 용이</li>
+                            <li>지방 분해 · 체지방률 감소</li>
+                            <li>100% 한약재 조제</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card" data-delay="200">
+                    <div class="product-img-wrap">
+                        <img src="assets/가맹병원.jpg" alt="날씬예약 가맹병원" class="product-img" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">가맹병원</span>
+                        <h3 class="product-name">전국 가맹 한의원</h3>
+                        <p class="product-desc">날씬예약 한약은 전국 제휴 한의원에서 처방받을 수 있습니다. 가까운 가맹 한의원을 찾아보세요.</p>
+                        <ul class="product-features">
+                            <li>전국 20개 제휴 한의원</li>
+                            <li>한의사 직접 상담 · 처방</li>
+                            <li>의료광고법 완벽 준수</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-notice animate-on-scroll">
+                <p>※ 모든 한약은 한의사가 직접 상담 후 체질에 맞게 처방합니다. 제품 이미지는 실제와 다를 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">Hi<span class="logo-accent">+</span></span>
+                    <p class="footer-tagline">의료인이 직접 집행하는 마케팅,<br>하이플러스가 함께합니다.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 하이플러스. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
